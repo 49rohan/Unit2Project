@@ -15,7 +15,7 @@ namespace Unit2Project.Models
                 new Anime
                 {
                     AnimeId = 1,
-                    AnimeName = "One Piece",
+                    AnimeName = "One Piece", 
                     Rating = null,
                 },
                 new Anime

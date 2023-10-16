@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using Unit2Project.Models;
 
@@ -26,7 +27,7 @@ namespace Unit2Project.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new Dbcontext { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new DbContext { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

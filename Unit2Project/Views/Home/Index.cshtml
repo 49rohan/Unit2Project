@@ -1,8 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@page
+@model Unit2Project.Models.AnimeModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>List of The Big Three</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Anime ID</th>
+            <th>Anime Name</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var anime in Model)
+        {
+            <tr>
+                <td>@anime.AnimeId</td>
+                <td>@anime.AnimeName</td>
+                <td>@anime.Rating</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form method="post">
+    <label>Which one of the big three is your favorite?:</label>
+    <select asp-for="SelectedAnime" asp-items="Model.AnimeList"></select>
+    <button type="submit">Submit</button>
+</form>
